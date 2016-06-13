@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Mobile Utils Plugin
+    Created by Patryk Stepniewski
+    Copyright (c) 2014-2016 gameDNA studio. All Rights Reserved.
+-->
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+  <init>
+	<log text="MobileUtils init"/>
+  </init>
+
+  <proguardAdditions>
+	<insert>
+	</insert>
+  </proguardAdditions>
+
+  <prebuildCopies>
+	<copyDir src="$S(PluginDir)/../../ThirdPartyLibraries/Android"
+					dst="$S(BuildDir)" />
+  </prebuildCopies>
+
+  <gameActivityImportAdditions>
+	<insert>
+	  import android.net.ConnectivityManager;
+	  import android.net.NetworkInfo;
+	  import com.google.android.gms.common.ConnectionResult;
+	</insert>
+  </gameActivityImportAdditions>
+
+  <androidManifestUpdates>
+  </androidManifestUpdates>
+
+  <gameActivityClassAdditions>
+	<insert>
+	public boolean AndroidThunkJava_CheckInternetConnection() 
+	{
+		ConnectivityManager connectivity = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		if (connectivity != null)
+		{
+			NetworkInfo[] info = connectivity.getAllNetworkInfo();
+			if (info != null)
+			{
+				for (int i = 0; i &lt; info.length; i++)
+				{
+					if (info[i].getState() == NetworkInfo.State.CONNECTED)
+					{
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+
+	public boolean AndroidThunkJava_CheckGooglePlayServices() 
+	{
+		int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
+		if(status == ConnectionResult.SUCCESS) 
+		{
+			return true;
+		} 
+		else 
+		{
+			return false;
+		}
+	}
+	</insert>
+  </gameActivityClassAdditions>
+</root>
