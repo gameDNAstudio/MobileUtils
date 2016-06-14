@@ -30,7 +30,29 @@ The reason that we prohibit you from creating a new blueprint node is to ensure 
 
 #Integration to the plugin
 Here you will find the steps you need to take in order to add new functionality to this plugin.
+
 ##For Android
-//todo
+At /Source/MobileUtils/MobileUtils_APL.xml,
+Add your tested java code:
+
+* At <gameActivityImportAdditions>
+		<insert>,
+		insert your import(s) (check first if they do not exist on the GameActivity, at the actual engine).
+* At <gameActivityClassAdditions>
+		 <insert>,
+		 insert your new methods. They should have the prefix "AndroidThunkJava_".
+
+At /Source/MobileUtils/Private/Android/MobileUtilsPlatform.h,
+Start integrating your code into the plugin:
+
+* Declare your jmethodID(s) as well as function(s) with the appropriate names.
+
+At /Source/MobileUtils/Private/Android/MobileUtilsPlatform.cpp,
+Continue your integration:
+* On the constructor, initialize that jmethodID you specified with FindMethod.
+* Add your previously specified function along with the implementation like the other functions on that file.
+
+And now, some extra intel. Do not be afraid to open up the source of Unreal and look into the Android related parts of the system as well as pull requests that add features to the android part. You can find more information about JNI method signatures [here!](http://www.rgagnon.com/javadetails/java-0286.html)
+
 ##For iOS
 //todo
