@@ -28,8 +28,6 @@ Plugin icon designed by _Freepik_.
 * 
 The reason that we prohibit you from creating a new blueprint node is to ensure cross platform compatibility as well as a uniform look and feel throughout the codebase. After your PR gets merged we will make sure that a new blueprint node is created if needed. We recommend trying to integrate your changes to the actual engine's master branch first and if your PR doesn't get merged, then resort to adding functionality to this plugin.
 
-Test this plugin at /Engine/Plugins/Runtime
-
 #Integration to the plugin
 Here you will find the steps you need to take in order to add new functionality to this plugin.
 
@@ -58,3 +56,6 @@ And now, some extra intel. Do not be afraid to open up the source of Unreal and 
 
 ##For iOS
 //todo
+
+#Testing the plugin
+In order to test your changes, create a new project with your engine version of choise (although, it should be greater than our current minimum requirement~4.12),then clone the plugin at *Project Folder*/Plugins and then regenerate project files. The new folder "MobileUtils" should then be visible. After building the development editor you will be able to use code that you integrated or existing blueprint nodes. Note that this happens if you want to make a PR. If you are just looking to use the plugin, check the [releases](https://github.com/gameDNAstudio/MobileUtils/releases) page.
