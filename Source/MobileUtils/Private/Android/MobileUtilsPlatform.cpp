@@ -5,12 +5,12 @@
 #include "MobileUtilsPrivatePCH.h"
 #include "MobileUtilsPlatform.h"
 
-#include "Android/AndroidJNI.h"
-#include "Android/AndroidApplication.h"
-#include <android_native_app_glue.h>
+
 
 FMobileUtilsPlatform::FMobileUtilsPlatform()
 {
+	CheckInternetConnectionMethod = FJavaWrapper::FindMethod(Env, FJavaWrapper::GameActivityClassID, "AndroidThunkJava_CheckInternetConnection", "()Z", false);
+	CheckGooglePlayServicesMethod = FJavaWrapper::FindMethod(Env, FJavaWrapper::GameActivityClassID, "AndroidThunkJava_CheckGooglePlayServices", "()Z", false);
 }
 
 FMobileUtilsPlatform::~FMobileUtilsPlatform()
@@ -22,8 +22,7 @@ bool FMobileUtilsPlatform::CheckInternetConnection()
 	bool bResult = false;
 	if (JNIEnv* Env = FAndroidApplication::GetJavaEnv())
 	{
-		static jmethodID Method = FJavaWrapper::FindMethod(Env, FJavaWrapper::GameActivityClassID, "AndroidThunkJava_CheckInternetConnection", "()Z", false);
-		bResult = FJavaWrapper::CallBooleanMethod(Env, FJavaWrapper::GameActivityThis, Method);
+		bResult = FJavaWrapper::CallBooleanMethod(Env, FJavaWrapper::GameActivityThis, CheckInternetConnectionMethod);
 	}
 	return bResult;
 }
@@ -33,8 +32,7 @@ bool FMobileUtilsPlatform::CheckGooglePlayServices()
 	bool bResult = false;
 	if (JNIEnv* Env = FAndroidApplication::GetJavaEnv())
 	{
-		static jmethodID Method = FJavaWrapper::FindMethod(Env, FJavaWrapper::GameActivityClassID, "AndroidThunkJava_CheckGooglePlayServices", "()Z", false);
-		bResult = FJavaWrapper::CallBooleanMethod(Env, FJavaWrapper::GameActivityThis, Method);
+		bResult = FJavaWrapper::CallBooleanMethod(Env, FJavaWrapper::GameActivityThis, CheckGooglePlayServicesMethod);
 	}
 	return bResult;
 }

@@ -5,6 +5,9 @@
 #pragma once
 
 #include "Interfaces/MobileUtilsInterface.h"
+#include "Android/AndroidJNI.h"
+#include "Android/AndroidApplication.h"
+#include <android_native_app_glue.h>
 
 class FMobileUtilsPlatform : public IMobileUtilsInterface
 {
@@ -14,4 +17,8 @@ public:
 
 	virtual bool CheckInternetConnection() override;
 	virtual bool CheckGooglePlayServices() override;
+
+private:
+	static jmethodID CheckInternetConnectionMethod;
+	static jmethodID CheckGooglePlayServicesMethod;
 };
