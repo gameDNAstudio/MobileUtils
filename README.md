@@ -58,3 +58,6 @@ And now, some extra intel. Do not be afraid to open up the source of Unreal and 
 
 ##For iOS
 //todo
+
+#Testing the plugin
+In order to test your changes, clone the plugin at /Engine/Plugins/Runtime and then generate project files. The new folder "MobileUtils" should then be visible. After building the engine you will be able to use code that you integrated or existing blueprint nodes. Note that this happens if you want to make a PR or prefer using the binary version of the engine. If you are just looking to use the plugin, check the [releases](https://github.com/gameDNAstudio/MobileUtils/releases) page.
