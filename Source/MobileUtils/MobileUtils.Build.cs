@@ -12,8 +12,23 @@ namespace UnrealBuildTool.Rules
 		{
 			Definitions.Add("WITH_MOBILEUTILS=1");
 
+			PrivateIncludePaths.Add("MobileUtils/Private");
+
 			PublicDependencyModuleNames.AddRange(new string[] { "Engine", "Core", "CoreUObject" });
 			PrivateIncludePathModuleNames.AddRange(new string[] { "Settings" });
+
+			if (Target.Platform == UnrealTargetPlatform.IOS || Target.Platform == UnrealTargetPlatform.TVOS)
+			{
+				PrivateIncludePaths.Add("MobileUtils/Private/IOS");
+			}
+			else if (Target.Platform == UnrealTargetPlatform.Android)
+			{
+				PrivateIncludePaths.Add("MobileUtils/Private/Android");
+			}
+			else
+			{
+				PrivateIncludePaths.Add("MobileUtils/Private/Null");
+			}
 
 			// Additional Frameworks and Libraries for iOS
 			if (Target.Platform == UnrealTargetPlatform.IOS)

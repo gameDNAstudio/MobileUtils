@@ -13,11 +13,19 @@ class MOBILEUTILS_API UMobileUtilsBlueprintLibrary : public UBlueprintFunctionLi
 {
 	GENERATED_UCLASS_BODY()
 
-	// Check Internet Connection
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category = Online)
+	/**
+	* Check if internet connection is available on a device
+	*
+	* @return - true if connection is available
+	*/
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = MobileUtils)
 	static bool CheckInternetConnection();
 
-	// Check Google Play Services
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category = Online)
+	/**
+	* Check if Google Play Services are available on a device
+	*
+	* @return - true if Google Play Services are available
+	*/
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = MobileUtils)
 	static bool CheckGooglePlayServices();
 };

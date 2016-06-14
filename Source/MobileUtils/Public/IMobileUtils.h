@@ -5,6 +5,9 @@
 #pragma once
 
 #include "ModuleManager.h"
+#include "MobileUtilsPlatform.h"
+
+typedef TSharedPtr<FMobileUtilsPlatform, ESPMode::ThreadSafe> FMobileUtilsPlatformPtr;
 
 class IMobileUtils : public IModuleInterface
 {
@@ -18,4 +21,12 @@ public:
 	{
 		return FModuleManager::Get().IsModuleLoaded("MobileUtils");
 	}
+
+	inline FMobileUtilsPlatformPtr GetPlatformInterface() const
+	{
+		return PlatformInterface;
+	}
+
+protected:
+	FMobileUtilsPlatformPtr PlatformInterface;
 };

@@ -21,6 +21,7 @@ IMPLEMENT_MODULE(FMobileUtils, MobileUtils)
 // Startup Module
 void FMobileUtils::StartupModule()
 {	
+	PlatformInterface = MakeShareable(new FMobileUtilsPlatform());
 }
 
 // Shutdown Module
