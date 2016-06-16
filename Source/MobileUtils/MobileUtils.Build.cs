@@ -27,7 +27,7 @@ namespace UnrealBuildTool.Rules
 			}
 			else
 			{
-				PrivateIncludePaths.Add("MobileUtils/Private/Null");
+				PrivateIncludePaths.Add("MobileUtils/Private/Windows");
 			}
 
 			// Additional Frameworks and Libraries for iOS
