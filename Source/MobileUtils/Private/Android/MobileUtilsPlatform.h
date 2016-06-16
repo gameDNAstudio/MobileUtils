@@ -18,7 +18,7 @@ public:
 	virtual bool CheckInternetConnection() override;
 	virtual bool CheckGooglePlayServices() override;
 
-private:
+	// JNI Methods
 	static jmethodID CheckInternetConnectionMethod;
 	static jmethodID CheckGooglePlayServicesMethod;
 };
