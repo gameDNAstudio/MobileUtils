@@ -13,8 +13,11 @@ namespace UnrealBuildTool.Rules
 			Definitions.Add("WITH_MOBILEUTILS=1");
 
 			PrivateIncludePaths.Add("MobileUtils/Private");
+            PrivateIncludePaths.Remove("MobileUtils/Private/Android");
+            PrivateIncludePaths.Remove("MobileUtils/Private/IOS");
+            PrivateIncludePaths.Remove("MobileUtils/Private/Null");
 
-			PublicDependencyModuleNames.AddRange(new string[] { "Engine", "Core", "CoreUObject" });
+            PublicDependencyModuleNames.AddRange(new string[] { "Engine", "Core", "CoreUObject" });
 			PrivateIncludePathModuleNames.AddRange(new string[] { "Settings" });
 
 			if (Target.Platform == UnrealTargetPlatform.IOS || Target.Platform == UnrealTargetPlatform.TVOS)
@@ -27,7 +30,7 @@ namespace UnrealBuildTool.Rules
 			}
 			else
 			{
-				PrivateIncludePaths.Add("MobileUtils/Private/Windows");
+				PrivateIncludePaths.Add("MobileUtils/Private/Null");
 			}
 
 			// Additional Frameworks and Libraries for iOS
@@ -50,6 +53,7 @@ namespace UnrealBuildTool.Rules
 				PublicAdditionalLibraries.Add("z");
 				PublicAdditionalLibraries.Add("sqlite3");
 			}
+
 			// Additional Frameworks and Libraries for Android
 			else if (Target.Platform == UnrealTargetPlatform.Android)
 			{

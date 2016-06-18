@@ -16,7 +16,7 @@ FMobileUtilsPlatform::~FMobileUtilsPlatform()
 
 bool FMobileUtilsPlatform::CheckInternetConnection()
 {
-	return true;
+	return false;
 }
 
 bool FMobileUtilsPlatform::CheckGooglePlayServices()
