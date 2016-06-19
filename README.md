@@ -17,6 +17,15 @@ The **Mobile Utils** plugin lets you integrate out-of-the-box mobile utitilites 
 * Works with Blueprint-only & source code projects
 * Works with Launcher & GitHub UE4 versions
 
+## Setup
+Copy this folder to the *Plugins* folder located in the main path of your project.
+
+![CopyFiles](Resources/CopyFiles.png)
+
+Enable *Mobile Utils* in *Edit -> Plugins -> Misc -> Mobile Utils*.
+
+![EnablePlugin](Resources/EnablePlugin.png)
+
 Plugin icon designed by _Freepik_.
 
 #Recommended PR pipeline
