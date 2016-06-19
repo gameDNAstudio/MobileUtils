@@ -62,7 +62,16 @@ Continue your integration:
 And now, some extra intel. Do not be afraid to open up the source of Unreal and look into the Android related parts of the system as well as pull requests that add features to the android part. You can find more information about JNI method signatures [here!](http://www.rgagnon.com/javadetails/java-0286.html)
 
 ##For iOS
-//todo
+At /Source/MobileUtils/Private/IOS/MobileUtilsPlatform.h,
+Start integrating your code into the plugin:
+
+* Declare your variables as well as function(s) with the appropriate names.
+
+At /Source/MobileUtils/Private/IOS/MobileUtilsPlatform.cpp,
+Continue your integration:
+* Add your previously specified function along with the implementation like the other functions on that file.
+
+In UE4 iOS specific code should be written in Objective-C. Remember you can mix C++ code with Objective-C code!
 
 #Testing the plugin
 In order to test your changes, create a new project with your engine version of choise (although, it should be greater than our current minimum requirement~4.12),then clone the plugin at *Project Folder*/Plugins and then regenerate project files. The new folder "MobileUtils" should then be visible. After building the development editor you will be able to use code that you integrated or existing blueprint nodes. Note that this happens if you want to make a PR. If you are just looking to use the plugin, check the [releases](https://github.com/gameDNAstudio/MobileUtils/releases) page.
