@@ -26,8 +26,6 @@ Enable *Mobile Utils* in *Edit -> Plugins -> Misc -> Mobile Utils*.
 
 ![EnablePlugin](Resources/EnablePlugin.png)
 
-Plugin icon designed by _Freepik_.
-
 #Recommended PR pipeline
 * Write java and/or Obj-C code in Android Studio or XCode depending on the platform(s) you wish to add functionality to
 * Test your code with a very simple app setup on your Android or iPhone
@@ -68,3 +66,5 @@ And now, some extra intel. Do not be afraid to open up the source of Unreal and 
 
 #Testing the plugin
 In order to test your changes, create a new project with your engine version of choise (although, it should be greater than our current minimum requirement~4.12),then clone the plugin at *Project Folder*/Plugins and then regenerate project files. The new folder "MobileUtils" should then be visible. After building the development editor you will be able to use code that you integrated or existing blueprint nodes. Note that this happens if you want to make a PR. If you are just looking to use the plugin, check the [releases](https://github.com/gameDNAstudio/MobileUtils/releases) page.
+
+Plugin icon designed by _Freepik_.
