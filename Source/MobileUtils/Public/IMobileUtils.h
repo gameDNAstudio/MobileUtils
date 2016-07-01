@@ -5,9 +5,9 @@
 #pragma once
 
 #include "ModuleManager.h"
-#include "MobileUtilsPlatform.h"
+#include "Interfaces/MobileUtilsInterface.h"
 
-typedef TSharedPtr<FMobileUtilsPlatform, ESPMode::ThreadSafe> FMobileUtilsPlatformPtr;
+typedef TSharedPtr<IMobileUtilsInterface, ESPMode::ThreadSafe> FMobileUtilsPlatformPtr;
 
 class IMobileUtils : public IModuleInterface
 {

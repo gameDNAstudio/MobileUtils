@@ -21,7 +21,9 @@ IMPLEMENT_MODULE(FMobileUtils, MobileUtils)
 // Startup Module
 void FMobileUtils::StartupModule()
 {	
+#if PLATFORM_ANDROID || PLATFORM_IOS
 	PlatformInterface = MakeShareable(new FMobileUtilsPlatform());
+#endif
 }
 
 // Shutdown Module

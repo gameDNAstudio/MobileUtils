@@ -13,9 +13,6 @@ namespace UnrealBuildTool.Rules
 			Definitions.Add("WITH_MOBILEUTILS=1");
 
 			PrivateIncludePaths.Add("MobileUtils/Private");
-            PrivateIncludePaths.Remove("MobileUtils/Private/Android");
-            PrivateIncludePaths.Remove("MobileUtils/Private/IOS");
-            PrivateIncludePaths.Remove("MobileUtils/Private/Null");
 
             PublicDependencyModuleNames.AddRange(new string[] { "Engine", "Core", "CoreUObject" });
 			PrivateIncludePathModuleNames.AddRange(new string[] { "Settings" });
@@ -27,10 +24,6 @@ namespace UnrealBuildTool.Rules
 			else if (Target.Platform == UnrealTargetPlatform.Android)
 			{
 				PrivateIncludePaths.Add("MobileUtils/Private/Android");
-			}
-			else
-			{
-				PrivateIncludePaths.Add("MobileUtils/Private/Null");
 			}
 
 			// Additional Frameworks and Libraries for iOS

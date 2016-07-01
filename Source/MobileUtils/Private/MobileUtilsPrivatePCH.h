@@ -9,6 +9,5 @@
 
 #include "IMobileUtils.h"
 #include "MobileUtilsClasses.h"
-#include "MobileUtilsPlatform.h"
 
 DECLARE_LOG_CATEGORY_EXTERN(LogMobileUtils, Log, All);

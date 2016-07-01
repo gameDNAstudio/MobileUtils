@@ -13,10 +13,18 @@ UMobileUtilsBlueprintLibrary::UMobileUtilsBlueprintLibrary(const FObjectInitiali
 
 bool UMobileUtilsBlueprintLibrary::CheckInternetConnection()
 {
+#if PLATFORM_ANDROID || PLATFORM_IOS
 	return IMobileUtils::Get().GetPlatformInterface()->CheckInternetConnection();
+#else
+	return true;
+#endif
 }
 
 bool UMobileUtilsBlueprintLibrary::CheckGooglePlayServices()
 {
+#if PLATFORM_ANDROID || PLATFORM_IOS
 	return IMobileUtils::Get().GetPlatformInterface()->CheckGooglePlayServices();
+#else
+	return false;
+#endif
 }
