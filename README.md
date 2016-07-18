@@ -11,6 +11,7 @@ The **Mobile Utils** plugin lets you integrate out-of-the-box mobile utitilites 
 ## Features
 * Checking internet connection availability
 * Checking Google Play Services availability
+* Getting persistent Unique Device ID
 * Works with dev & shipping builds
 * Out-of-the-box for iOS & Android
 * Additional SDK included
