@@ -4,6 +4,7 @@
 
 #include "MobileUtilsPrivatePCH.h"
 #include "MobileUtilsPlatform.h"
+#include "Runtime/Engine/Classes/Kismet/KismetSystemLibrary.h"
 
 
 jmethodID FMobileUtilsPlatform::CheckInternetConnectionMethod;
@@ -40,4 +41,9 @@ bool FMobileUtilsPlatform::CheckGooglePlayServices()
 		bResult = FJavaWrapper::CallBooleanMethod(Env, FJavaWrapper::GameActivityThis, FMobileUtilsPlatform::CheckGooglePlayServicesMethod);
 	}
 	return bResult;
+}
+
+FString FMobileUtilsPlatform::GetPersistentUniqueDeviceId()
+{
+	return UKismetSystemLibrary::GetUniqueDeviceId();
 }

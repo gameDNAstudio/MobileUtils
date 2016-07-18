@@ -32,14 +32,22 @@ namespace UnrealBuildTool.Rules
 				PublicAdditionalFrameworks.Add(
 					new UEBuildFramework(
 						"Reachability",
-						"../../ThirdPartyLibraries/iOS/Reachability.embeddedframework.zip"
+						"../ThirdParty/iOS/Reachability.embeddedframework.zip"
+					)
+				);
+
+				PublicAdditionalFrameworks.Add(
+					new UEBuildFramework(
+						"SSKeychain",
+						"../ThirdParty/iOS/SSKeychain.embeddedframework.zip"
 					)
 				);
 
 				PublicFrameworks.AddRange(
 					new string[]
 					{
-						"SystemConfiguration"
+						"SystemConfiguration",
+						"Security"
 					}
 				);
 

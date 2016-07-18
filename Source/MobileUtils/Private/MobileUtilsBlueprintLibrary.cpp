@@ -4,6 +4,7 @@
 
 #include "MobileUtilsPrivatePCH.h"
 #include "MobileUtilsBlueprintLibrary.h"
+#include "Runtime/Engine/Classes/Kismet/KismetSystemLibrary.h"
 
 
 UMobileUtilsBlueprintLibrary::UMobileUtilsBlueprintLibrary(const FObjectInitializer& ObjectInitializer)
@@ -26,5 +27,14 @@ bool UMobileUtilsBlueprintLibrary::CheckGooglePlayServices()
 	return IMobileUtils::Get().GetPlatformInterface()->CheckGooglePlayServices();
 #else
 	return false;
+#endif
+}
+
+FString UMobileUtilsBlueprintLibrary::GetPersistentUniqueDeviceId()
+{
+#if PLATFORM_ANDROID || PLATFORM_IOS
+	return IMobileUtils::Get().GetPlatformInterface()->GetPersistentUniqueDeviceId();
+#else
+	return UKismetSystemLibrary::GetUniqueDeviceId();
 #endif
 }

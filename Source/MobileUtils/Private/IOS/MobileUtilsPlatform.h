@@ -14,4 +14,5 @@ public:
 
 	virtual bool CheckInternetConnection() override;
 	virtual bool CheckGooglePlayServices() override;
+	virtual FString GetPersistentUniqueDeviceId() override;
 };

@@ -6,6 +6,7 @@
 #include "MobileUtilsPlatform.h"
 
 #import <Reachability/Reachability.h>
+#import <SSKeychain/SSKeychain.h>
 
 
 FMobileUtilsPlatform::FMobileUtilsPlatform()
@@ -26,4 +27,18 @@ bool FMobileUtilsPlatform::CheckInternetConnection()
 bool FMobileUtilsPlatform::CheckGooglePlayServices()
 {
 	return false;
+}
+
+FString FMobileUtilsPlatform::GetPersistentUniqueDeviceId()
+{
+	NSString *AppName = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)kCFBundleNameKey];
+	NSString *PersistentUUID = [SSKeychain passwordForService : AppName account : @"incoding"];
+
+	if (PersistentUUID == nil)
+	{
+		PersistentUUID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+		[SSKeychain setPassword : PersistentUUID forService : AppName account : @"incoding"];
+	}
+
+	return FString(PersistentUUID);
 }

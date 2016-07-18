@@ -28,4 +28,12 @@ class MOBILEUTILS_API UMobileUtilsBlueprintLibrary : public UBlueprintFunctionLi
 	*/
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = MobileUtils)
 	static bool CheckGooglePlayServices();
+
+	/**
+	* Return persistent Unique Device ID without reset after app reinstall
+	*
+	* @return - Unique Device ID
+	*/
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = MobileUtils)
+	static FString GetPersistentUniqueDeviceId();
 };
