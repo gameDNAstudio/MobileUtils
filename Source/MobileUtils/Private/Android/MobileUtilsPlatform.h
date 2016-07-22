@@ -22,4 +22,5 @@ public:
 	// JNI Methods
 	static jmethodID CheckInternetConnectionMethod;
 	static jmethodID CheckGooglePlayServicesMethod;
+	static jmethodID GetPersistentUniqueDeviceIdMethod;
 };
