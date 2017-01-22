@@ -1,7 +1,7 @@
 {
   "FileVersion": 3,
   "Version": 1,
-  "VersionName": "1.2.0",
+  "VersionName": "1.3.0",
   "FriendlyName": "Mobile Utils",
   "Description": "Additional utilities for mobile games",
   "Category": "Misc",
@@ -9,7 +9,7 @@
   "CreatedByURL": "http://gamednastudio.com",
   "DocsURL": "https://github.com/gameDNAstudio/MobileUtils",
   "MarketplaceURL": "",
-  "EngineVersion": "4.14.0",
+  "EngineVersion": "4.15.0",
   "SupportURL": "mailto:support@gamednastudio.com",
   "Modules": [
     {
@@ -21,5 +21,6 @@
   "EnabledByDefault": true,
   "CanContainContent": false,
   "IsBetaVersion": false,
-  "Installed": false
+  "Installed": true,
+  "RequiresBuildPlatform": false
 }
