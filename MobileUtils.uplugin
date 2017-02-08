@@ -8,7 +8,7 @@
   "CreatedBy": "gameDNA",
   "CreatedByURL": "http://gamednastudio.com",
   "DocsURL": "https://github.com/gameDNAstudio/MobileUtils",
-  "MarketplaceURL": "",
+  "MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/94e8f674898a4589882c283436190676",
   "EngineVersion": "4.15.0",
   "SupportURL": "mailto:support@gamednastudio.com",
   "Modules": [
