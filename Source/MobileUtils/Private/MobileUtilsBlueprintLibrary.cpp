@@ -2,8 +2,8 @@
 // Created by Patryk Stepniewski
 // Copyright (c) 2014-2017 gameDNA. All Rights Reserved.
 
-#include "MobileUtilsPrivatePCH.h"
 #include "MobileUtilsBlueprintLibrary.h"
+#include "MobileUtilsPrivatePCH.h"
 #include "Runtime/Engine/Classes/Kismet/KismetSystemLibrary.h"
 
 

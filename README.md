@@ -4,7 +4,7 @@
 
 The **Mobile Utils** plugin lets you integrate out-of-the-box mobile utitilites for iOS & Android into your [Unreal Engine 4](http://www.unrealengine.com) project.
 
-* **Current version:** 1.3.0
+* **Current version:** 1.3.1
 * **Binaries compiled for:** Unreal Engine 4.15
 * **Required Unreal Engine 4.15 or above.**
 
