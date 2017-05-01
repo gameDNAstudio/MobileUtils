@@ -20,7 +20,7 @@ namespace UnrealBuildTool.Rules
 
 			PrivateIncludePathModuleNames.AddRange(new string[] { "Settings" });
 
-			if (Target.Platform == UnrealTargetPlatform.IOS || Target.Platform == UnrealTargetPlatform.TVOS)
+			if (Target.Platform == UnrealTargetPlatform.IOS)
 			{
 				PrivateIncludePaths.Add("MobileUtils/Private/IOS");
 			}
@@ -29,7 +29,7 @@ namespace UnrealBuildTool.Rules
 				PrivateIncludePaths.Add("MobileUtils/Private/Android");
 			}
 
-			// Additional Frameworks and Libraries for iOS
+			// Additional Frameworks and Libraries for IOS
 			if (Target.Platform == UnrealTargetPlatform.IOS)
 			{
 				PublicAdditionalFrameworks.Add(

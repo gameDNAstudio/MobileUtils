@@ -15,7 +15,8 @@
     {
       "Name": "MobileUtils",
       "Type": "Runtime",
-      "LoadingPhase": "PostConfigInit"
+	  "LoadingPhase": "PostConfigInit",
+	  "WhitelistPlatforms": [ "Win64", "Win32", "Mac", "IOS", "Android" ]
     }
   ],
   "EnabledByDefault": true,
