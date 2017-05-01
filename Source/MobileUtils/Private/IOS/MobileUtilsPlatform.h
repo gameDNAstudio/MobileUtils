@@ -5,6 +5,8 @@
 #pragma once
 
 #include "Interfaces/MobileUtilsInterface.h"
+#include "EngineMinimal.h"
+#include "Core.h"
 
 class FMobileUtilsPlatform : public IMobileUtilsInterface
 {

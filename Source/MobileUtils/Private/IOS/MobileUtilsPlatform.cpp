@@ -2,7 +2,6 @@
 // Created by Patryk Stepniewski
 // Copyright (c) 2014-2017 gameDNA. All Rights Reserved.
 
-#include "MobileUtilsPrivatePCH.h"
 #include "MobileUtilsPlatform.h"
 
 #import <Reachability/Reachability.h>

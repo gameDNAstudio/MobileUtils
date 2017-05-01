@@ -5,7 +5,11 @@
 #pragma once
 
 #include "ModuleManager.h"
+#include "EngineMinimal.h"
+#include "Core.h"
 #include "Interfaces/MobileUtilsInterface.h"
+
+DECLARE_LOG_CATEGORY_EXTERN(LogMobileUtils, Log, All);
 
 typedef TSharedPtr<IMobileUtilsInterface, ESPMode::ThreadSafe> FMobileUtilsPlatformPtr;
 

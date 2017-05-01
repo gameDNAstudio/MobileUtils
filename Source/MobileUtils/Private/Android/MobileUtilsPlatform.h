@@ -8,6 +8,8 @@
 #include "Android/AndroidJNI.h"
 #include "Android/AndroidApplication.h"
 #include <android_native_app_glue.h>
+#include "EngineMinimal.h"
+#include "Core.h"
 
 class FMobileUtilsPlatform : public IMobileUtilsInterface
 {

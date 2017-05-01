@@ -7,7 +7,6 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "MobileUtilsBlueprintLibrary.generated.h"
 
-
 UCLASS()
 class MOBILEUTILS_API UMobileUtilsBlueprintLibrary : public UBlueprintFunctionLibrary
 {
@@ -36,4 +35,12 @@ class MOBILEUTILS_API UMobileUtilsBlueprintLibrary : public UBlueprintFunctionLi
 	*/
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = MobileUtils)
 	static FString GetPersistentUniqueDeviceId();
+
+	/**
+	* Return platform specific Auth Token retrieved from Online Subsystem
+	*
+	* @return - Auth Token
+	*/
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = MobileUtils)
+	static FString GetAuthToken();
 };

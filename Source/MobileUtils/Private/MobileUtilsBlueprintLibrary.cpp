@@ -3,9 +3,9 @@
 // Copyright (c) 2014-2017 gameDNA. All Rights Reserved.
 
 #include "MobileUtilsBlueprintLibrary.h"
-#include "MobileUtilsPrivatePCH.h"
 #include "Runtime/Engine/Classes/Kismet/KismetSystemLibrary.h"
-
+#include "OnlineSubsystem.h"
+#include "OnlineIdentityInterface.h"
 
 UMobileUtilsBlueprintLibrary::UMobileUtilsBlueprintLibrary(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
@@ -37,4 +37,19 @@ FString UMobileUtilsBlueprintLibrary::GetPersistentUniqueDeviceId()
 #else
 	return UKismetSystemLibrary::GetUniqueDeviceId();
 #endif
+}
+
+FString UMobileUtilsBlueprintLibrary::GetAuthToken()
+{
+	auto OnlineSubsystem = IOnlineSubsystem::Get();
+	if (OnlineSubsystem)
+	{
+		IOnlineIdentityPtr OnlineIdentity = OnlineSubsystem->GetIdentityInterface();
+		if (OnlineIdentity.IsValid())
+		{
+			 return OnlineIdentity->GetAuthToken(0);
+		}
+	}
+
+	return FString();
 }

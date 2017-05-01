@@ -10,11 +10,14 @@ namespace UnrealBuildTool.Rules
 	{
 		public MobileUtils(TargetInfo Target)
 		{
+			PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+
 			Definitions.Add("WITH_MOBILEUTILS=1");
 
 			PrivateIncludePaths.Add("MobileUtils/Private");
 
-            PublicDependencyModuleNames.AddRange(new string[] { "Engine", "Core", "CoreUObject" });
+            PublicDependencyModuleNames.AddRange(new string[] { "Engine", "Core", "CoreUObject", "OnlineSubsystem" });
+
 			PrivateIncludePathModuleNames.AddRange(new string[] { "Settings" });
 
 			if (Target.Platform == UnrealTargetPlatform.IOS || Target.Platform == UnrealTargetPlatform.TVOS)
@@ -32,14 +35,14 @@ namespace UnrealBuildTool.Rules
 				PublicAdditionalFrameworks.Add(
 					new UEBuildFramework(
 						"Reachability",
-						"../ThirdParty/iOS/Reachability.embeddedframework.zip"
+						"../ThirdParty/IOS/Reachability.embeddedframework.zip"
 					)
 				);
 
 				PublicAdditionalFrameworks.Add(
 					new UEBuildFramework(
 						"SSKeychain",
-						"../ThirdParty/iOS/SSKeychain.embeddedframework.zip"
+						"../ThirdParty/IOS/SSKeychain.embeddedframework.zip"
 					)
 				);
 
@@ -53,8 +56,10 @@ namespace UnrealBuildTool.Rules
 
 				PublicAdditionalLibraries.Add("z");
 				PublicAdditionalLibraries.Add("sqlite3");
-			}
 
+				string PluginPath = Utils.MakePathRelativeTo(ModuleDirectory, BuildConfiguration.RelativeEnginePath);
+				AdditionalPropertiesForReceipt.Add(new ReceiptProperty("IOSPlugin", Path.Combine(PluginPath, "MobileUtils_UPL_IOS.xml")));
+			}
 			// Additional Frameworks and Libraries for Android
 			else if (Target.Platform == UnrealTargetPlatform.Android)
 			{
