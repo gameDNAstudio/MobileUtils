@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Mobile Utils plugin additions -->
-<root xmlns:android="http://schemas.android.com/apk/res/android">
+<root xmlns:android="http://schemas.ios.com/res/ios">
   <init>
 	<log text="Mobile Utils init"/>
   </init>
