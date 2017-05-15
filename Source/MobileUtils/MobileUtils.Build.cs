@@ -8,7 +8,7 @@ namespace UnrealBuildTool.Rules
 {
 	public class MobileUtils : ModuleRules
 	{
-		public MobileUtils(TargetInfo Target)
+		public MobileUtils(ReadOnlyTargetRules Target) : base(Target)
 		{
 			PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
