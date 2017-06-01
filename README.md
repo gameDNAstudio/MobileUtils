@@ -30,7 +30,7 @@ Enable *Mobile Utils* in *Edit -> Plugins -> Misc -> Mobile Utils*.
 
 ![EnablePlugin](Resources/EnablePlugin.png)
 
-#Recommended PR pipeline
+# Recommended PR pipeline
 * Write java and/or Obj-C code in Android Studio or XCode depending on the platform(s) you wish to add functionality to
 * Test your code with a very simple app setup on your Android or iPhone
 * Integrate your code to the plugin **without** creating an interface to blueprints
@@ -39,10 +39,10 @@ Enable *Mobile Utils* in *Edit -> Plugins -> Misc -> Mobile Utils*.
 * 
 The reason that we prohibit you from creating a new blueprint node is to ensure cross platform compatibility as well as a uniform look and feel throughout the codebase. After your PR gets merged we will make sure that a new blueprint node is created if needed. We recommend trying to integrate your changes to the actual engine's master branch first and if your PR doesn't get merged, then resort to adding functionality to this plugin.
 
-#Integration to the plugin
+# Integration to the plugin
 Here you will find the steps you need to take in order to add new functionality to this plugin.
 
-##For Android
+## For Android
 At /Source/MobileUtils/MobileUtils_APL.xml,
 Add your tested java code:
 
@@ -65,7 +65,7 @@ Continue your integration:
 
 And now, some extra intel. Do not be afraid to open up the source of Unreal and look into the Android related parts of the system as well as pull requests that add features to the android part. You can find more information about JNI method signatures [here!](http://www.rgagnon.com/javadetails/java-0286.html)
 
-##For iOS
+## For iOS
 At /Source/MobileUtils/Private/IOS/MobileUtilsPlatform.h,
 Start integrating your code into the plugin:
 
@@ -77,7 +77,7 @@ Continue your integration:
 
 In UE4 iOS specific code should be written in Objective-C. Remember you can mix C++ code with Objective-C code!
 
-#Testing the plugin
+# Testing the plugin
 In order to test your changes, create a new project with your engine version of choise (although, it should be greater than our current minimum requirement~4.12),then clone the plugin at *Project Folder*/Plugins and then regenerate project files. The new folder "MobileUtils" should then be visible. After building the development editor you will be able to use code that you integrated or existing blueprint nodes. Note that this happens if you want to make a PR. If you are just looking to use the plugin, check the [releases](https://github.com/gameDNAstudio/MobileUtils/releases) page.
 
 Plugin icon designed by _Freepik_.
