@@ -36,7 +36,7 @@ Enable *Mobile Utils* in *Edit -> Plugins -> Misc -> Mobile Utils*.
 * Integrate your code to the plugin **without** creating an interface to blueprints
 * Create a new sample project and test your code on a packaged project, at your desired device and platform
 * If everything works correctly, perform a Pull Request
-* 
+ 
 The reason that we prohibit you from creating a new blueprint node is to ensure cross platform compatibility as well as a uniform look and feel throughout the codebase. After your PR gets merged we will make sure that a new blueprint node is created if needed. We recommend trying to integrate your changes to the actual engine's master branch first and if your PR doesn't get merged, then resort to adding functionality to this plugin.
 
 # Integration to the plugin
