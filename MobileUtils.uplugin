@@ -19,6 +19,16 @@
 	  "WhitelistPlatforms": [ "Win64", "Win32", "Mac", "IOS", "Android" ]
     }
   ],
+  "Plugins": [
+	{
+		"Name": "OnlineSubsystem",
+		"Enabled": true
+	},
+	{
+		"Name": "OnlineSubsystemUtils",
+		"Enabled": true
+	}
+  ],
   "EnabledByDefault": true,
   "CanContainContent": false,
   "IsBetaVersion": false,
