@@ -6,9 +6,9 @@
 
 We want to make a big mobile plugin with many features from community so feel free to make pull request! After review, if all is good, it will be merged into plugin. Thank you! :-)
 
-* **Current version:** 1.5.0
-* **Binaries compiled for:** Unreal Engine 4.16
-* **Required Unreal Engine 4.16 or above.**
+* **Current version:** 1.6.0
+* **Binaries compiled for:** Unreal Engine 4.17
+* **Required Unreal Engine 4.17 or above.**
 
 ## Features
 * Checking internet connection availability
