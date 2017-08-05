@@ -30,6 +30,12 @@ Enable *Mobile Utils* in *Edit -> Plugins -> Misc -> Mobile Utils*.
 
 ![EnablePlugin](Resources/EnablePlugin.png)
 
+If you want to use *Get Persistent Unique Device Id* function on Android, you should request *READ_PHONE_STATE* permission:
+
+![Permissions](Resources/Permissions.png)
+
+If you can't do this, use *Get Device Id* function instead. In this case, device ID should be unique but it's not guaranteed.
+
 # Recommended PR pipeline
 * Write java and/or Obj-C code in Android Studio or XCode depending on the platform(s) you wish to add functionality to
 * Test your code with a very simple app setup on your Android or iPhone
