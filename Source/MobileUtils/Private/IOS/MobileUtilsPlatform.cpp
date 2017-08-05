@@ -41,3 +41,8 @@ FString FMobileUtilsPlatform::GetPersistentUniqueDeviceId()
 
 	return FString(PersistentUUID);
 }
+
+FString FMobileUtilsPlatform::GetDeviceId()
+{
+	return GetPersistentUniqueDeviceId();
+}

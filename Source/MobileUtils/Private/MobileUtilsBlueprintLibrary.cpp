@@ -39,6 +39,15 @@ FString UMobileUtilsBlueprintLibrary::GetPersistentUniqueDeviceId()
 #endif
 }
 
+FString UMobileUtilsBlueprintLibrary::GetDeviceId()
+{
+#if PLATFORM_ANDROID || PLATFORM_IOS
+	return IMobileUtils::Get().GetPlatformInterface()->GetDeviceId();
+#else
+	return UKismetSystemLibrary::GetUniqueDeviceId();
+#endif
+}
+
 FString UMobileUtilsBlueprintLibrary::GetAuthToken()
 {
 	auto OnlineSubsystem = IOnlineSubsystem::Get();
