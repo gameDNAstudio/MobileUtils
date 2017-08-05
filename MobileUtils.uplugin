@@ -33,5 +33,5 @@
   "CanContainContent": false,
   "IsBetaVersion": false,
   "Installed": true,
-  "RequiresBuildPlatform": false
+  "RequiresBuildPlatform": true
 }
