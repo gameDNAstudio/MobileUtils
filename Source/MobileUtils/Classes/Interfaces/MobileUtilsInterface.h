@@ -30,4 +30,11 @@ public:
 	* @return - Unique Device ID
 	*/
 	virtual FString GetPersistentUniqueDeviceId();
+
+	/**
+	* Return Device ID. Should be unique but not guaranteed.
+	*
+	* @return - Device ID
+	*/
+	virtual FString GetDeviceId();
 };

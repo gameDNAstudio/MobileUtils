@@ -37,6 +37,14 @@ class MOBILEUTILS_API UMobileUtilsBlueprintLibrary : public UBlueprintFunctionLi
 	static FString GetPersistentUniqueDeviceId();
 
 	/**
+	* Return Device ID. Should be unique but not guaranteed.
+	*
+	* @return - Unique Device ID
+	*/
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = MobileUtils)
+	static FString GetDeviceId();
+
+	/**
 	* Return platform specific Auth Token retrieved from Online Subsystem
 	*
 	* @return - Auth Token

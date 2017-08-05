@@ -18,7 +18,7 @@
 	<copyDir src="$S(PluginDir)/../../ThirdPartyLibraries/Android"
 					dst="$S(BuildDir)" />
   </prebuildCopies>
-
+	
   <gameActivityImportAdditions>
 	<insert>
 	  import android.net.ConnectivityManager;
@@ -33,6 +33,7 @@
   </gameActivityImportAdditions>
 
   <androidManifestUpdates>
+	  <addPermission android:name="android.permission.READ_PHONE_STATE" />
   </androidManifestUpdates>
 
   <gameActivityClassAdditions>
@@ -90,6 +91,52 @@
 		String MACAddress = wm.getConnectionInfo().getMacAddress();
 	
 		String LongDeviceID = IMEI + FakeDeviceID + AndroidID + MACAddress;
+
+		MessageDigest m = null;
+		try 
+		{
+			m = MessageDigest.getInstance("MD5");
+		} 
+		catch (NoSuchAlgorithmException e) 
+		{
+			e.printStackTrace();
+		} 
+		m.update(LongDeviceID.getBytes(), 0, LongDeviceID.length());
+		byte MD5Data[] = m.digest();
+
+		String UniqueID = new String();
+		for (int i = 0; i &lt; MD5Data.length; i++) 
+		{
+			int b =  (0xFF &amp; MD5Data[i]);
+			if (b &lt;= 0xF) 
+			{
+			  UniqueID += "0";
+			}
+			UniqueID += Integer.toHexString(b); 
+		}
+
+		UniqueID = UniqueID.toUpperCase();
+		
+		return UniqueID;
+	}
+	
+	public String AndroidThunkJava_GetDeviceId() 
+	{	
+		String FakeDeviceID = "35" + 
+								Build.BOARD.length() % 10+ Build.BRAND.length() % 10 + 
+        						Build.CPU_ABI.length() % 10 + Build.DEVICE.length() % 10 + 
+        						Build.DISPLAY.length() % 10 + Build.HOST.length() % 10 + 
+        						Build.ID.length() % 10 + Build.MANUFACTURER.length() % 10 + 
+        						Build.MODEL.length() % 10 + Build.PRODUCT.length() % 10 + 
+        						Build.TAGS.length() % 10 + Build.TYPE.length() % 10 + 
+        						Build.USER.length() % 10 ; 
+ 
+		String AndroidID = Secure.getString(getContentResolver(), Secure.ANDROID_ID); 
+
+		WifiManager wm = (WifiManager)getSystemService(Context.WIFI_SERVICE);	  
+		String MACAddress = wm.getConnectionInfo().getMacAddress();
+	
+		String LongDeviceID = FakeDeviceID + AndroidID + MACAddress;
 
 		MessageDigest m = null;
 		try 
