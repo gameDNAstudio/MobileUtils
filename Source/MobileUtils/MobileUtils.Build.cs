@@ -1,6 +1,6 @@
 // Mobile Utils Plugin
 // Created by Patryk Stepniewski
-// Copyright (c) 2014-2017 gameDNA Ltd. All Rights Reserved.
+// Copyright (c) 2014-2018 gameDNA Ltd. All Rights Reserved.
 
 using System.IO;
 
@@ -12,7 +12,7 @@ namespace UnrealBuildTool.Rules
 		{
 			PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-			Definitions.Add("WITH_MOBILEUTILS=1");
+			PublicDefinitions.Add("WITH_MOBILEUTILS=1");
 
 			PrivateIncludePaths.Add("MobileUtils/Private");
 
@@ -58,14 +58,14 @@ namespace UnrealBuildTool.Rules
 				PublicAdditionalLibraries.Add("sqlite3");
 
 				string PluginPath = Utils.MakePathRelativeTo(ModuleDirectory, Target.RelativeEnginePath);
-				AdditionalPropertiesForReceipt.Add(new ReceiptProperty("IOSPlugin", Path.Combine(PluginPath, "MobileUtils_UPL_IOS.xml")));
+				AdditionalPropertiesForReceipt.Add("IOSPlugin", Path.Combine(PluginPath, "MobileUtils_UPL_IOS.xml"));
 			}
 			// Additional Frameworks and Libraries for Android
 			else if (Target.Platform == UnrealTargetPlatform.Android)
 			{
 				PrivateDependencyModuleNames.AddRange(new string[] { "Launch" });
 				string PluginPath = Utils.MakePathRelativeTo(ModuleDirectory, Target.RelativeEnginePath);
-				AdditionalPropertiesForReceipt.Add(new ReceiptProperty("AndroidPlugin", Path.Combine(PluginPath, "MobileUtils_UPL_Android.xml")));
+				AdditionalPropertiesForReceipt.Add("AndroidPlugin", Path.Combine(PluginPath, "MobileUtils_UPL_Android.xml"));
 			}
 		}
 	}
