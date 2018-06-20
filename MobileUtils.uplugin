@@ -1,7 +1,7 @@
 {
   "FileVersion": 3,
   "Version": 1,
-  "VersionName": "1.8.0",
+  "VersionName": "1.9.0",
   "FriendlyName": "Mobile Utils",
   "Description": "Additional utilities for mobile games",
   "Category": "Misc",
@@ -9,7 +9,7 @@
   "CreatedByURL": "http://gamednastudio.com",
   "DocsURL": "https://github.com/gameDNAstudio/MobileUtils",
   "MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/94e8f674898a4589882c283436190676",
-  "EngineVersion": "4.19.0",
+  "EngineVersion": "4.20.0",
   "SupportURL": "mailto:support@gamednastudio.com",
   "Modules": [
     {
