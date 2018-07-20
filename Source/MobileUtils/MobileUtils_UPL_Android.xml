@@ -14,10 +14,10 @@
 	</insert>
   </proguardAdditions>
 
-  <prebuildCopies>
+  <resourceCopies>
 	<copyDir src="$S(PluginDir)/../../ThirdPartyLibraries/Android"
 					dst="$S(BuildDir)" />
-  </prebuildCopies>
+  </resourceCopies>
 	
   <gameActivityImportAdditions>
 	<insert>
