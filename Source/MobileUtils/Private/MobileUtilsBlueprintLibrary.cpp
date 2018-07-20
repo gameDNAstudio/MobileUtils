@@ -5,7 +5,7 @@
 #include "MobileUtilsBlueprintLibrary.h"
 #include "Runtime/Engine/Classes/Kismet/KismetSystemLibrary.h"
 #include "OnlineSubsystem.h"
-#include "OnlineIdentityInterface.h"
+#include "Interfaces/OnlineIdentityInterface.h"
 
 UMobileUtilsBlueprintLibrary::UMobileUtilsBlueprintLibrary(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)

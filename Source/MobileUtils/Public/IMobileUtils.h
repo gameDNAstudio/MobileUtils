@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "ModuleManager.h"
+#include "Modules/ModuleManager.h"
 #include "EngineMinimal.h"
 #include "Core.h"
 #include "Interfaces/MobileUtilsInterface.h"
