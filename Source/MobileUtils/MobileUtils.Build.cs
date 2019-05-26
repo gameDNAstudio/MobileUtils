@@ -11,8 +11,9 @@ namespace UnrealBuildTool.Rules
 		public MobileUtils(ReadOnlyTargetRules Target) : base(Target)
 		{
 			PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+            PrecompileForTargets = PrecompileTargetsType.Any;
 
-			PublicDefinitions.Add("WITH_MOBILEUTILS=1");
+            PublicDefinitions.Add("WITH_MOBILEUTILS=1");
 
 			PrivateIncludePaths.Add("MobileUtils/Private");
 
