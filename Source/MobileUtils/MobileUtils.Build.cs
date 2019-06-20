@@ -42,9 +42,10 @@ namespace UnrealBuildTool.Rules
 
 				PublicAdditionalFrameworks.Add(
 					new Framework(
-						"SSKeychain",
-						"../ThirdParty/IOS/SSKeychain.embeddedframework.zip"
-					)
+						"SAMKeychain",
+						"../ThirdParty/IOS/SAMKeychain.embeddedframework.zip",
+                        "SAMKeychain.bundle"
+                    )
 				);
 
 				PublicFrameworks.AddRange(
